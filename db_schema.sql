@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS barber_shop_db;
+USE barber_shop_db;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  passwordHash VARCHAR(255) NOT NULL,
+  role ENUM('user', 'admin') DEFAULT 'user',
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
